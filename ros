@@ -1,0 +1,286 @@
+ivora@ivora-desktop:~$ cd ~/ardupilot/ArduCopter
+ivora@ivora-desktop:~/ardupilot/ArduCopter$ ../Tools/autotest/sim_vehicle.py -f gazebo-iris --console --map
+SIM_VEHICLE: Start
+SIM_VEHICLE: Killing tasks
+SIM_VEHICLE: Starting up at -35.363261,149.165230,584,353 (CMAC)
+SIM_VEHICLE: WAF build
+SIM_VEHICLE: Configure waf
+SIM_VEHICLE: "/home/ivora/ardupilot/modules/waf/waf-light" "configure" "--board" "sitl"
+Setting top to                           : /home/ivora/ardupilot 
+Setting out to                           : /home/ivora/ardupilot/build 
+Autoconfiguration                        : enabled 
+GCOV code coverage analysis              : no 
+Setting board to                         : sitl 
+Using toolchain                          : native 
+Checking for 'g++' (C++ compiler)        : /usr/bin/g++ 
+Checking for 'gcc' (C compiler)          : /usr/bin/gcc 
+Checking for c flags '-MMD'              : yes 
+Checking for cxx flags '-MMD'            : yes 
+Checking for need to link with librt     : not necessary 
+Checking for HAVE_CMATH_ISFINITE         : yes 
+Checking for HAVE_CMATH_ISINF            : yes 
+Checking for HAVE_CMATH_ISNAN            : yes 
+Checking for NEED_CMATH_ISFINITE_STD_NAMESPACE : yes 
+Checking for NEED_CMATH_ISINF_STD_NAMESPACE    : yes 
+Checking for NEED_CMATH_ISNAN_STD_NAMESPACE    : yes 
+Checking for header endian.h                   : yes 
+Checking for header byteswap.h                 : yes 
+Checking for HAVE_MEMRCHR                      : yes 
+Checking for program 'python'                  : /usr/bin/python 
+Checking for python version >= 2.7.0           : 2.7.15 
+Checking for program 'python'                  : /usr/bin/python 
+Checking for python version >= 2.7.0           : 2.7.15 
+Source is git repository                       : yes 
+Update submodules                              : yes 
+Checking for program 'git'                     : /usr/bin/git 
+Checking for program 'size'                    : /usr/bin/size 
+Benchmarks                                     : disabled 
+Unit tests                                     : enabled 
+Scripting                                      : enabled 
+Scripting runtime checks                       : enabled 
+Checking for program 'rsync'                   : not found 
+'configure' finished successfully (4.924s)
+SIM_VEHICLE: Building
+SIM_VEHICLE: "/home/ivora/ardupilot/modules/waf/waf-light" "build" "--target" "bin/arducopter"
+Waf: Entering directory `/home/ivora/ardupilot/build/sitl'
+Embedding file sandbox.lua:libraries/AP_Scripting/scripts/sandbox.lua
+Waf: Leaving directory `/home/ivora/ardupilot/build/sitl'
+
+BUILD SUMMARY
+Build directory: /home/ivora/ardupilot/build/sitl
+Target          Text     Data   BSS    Total  
+----------------------------------------------
+bin/arducopter  1880227  94472  66576  2041275
+
+Build commands will be stored in build/sitl/compile_commands.json
+'build' finished successfully (7.219s)
+SIM_VEHICLE: Using defaults from (/home/ivora/ardupilot/Tools/autotest/default_params/copter.parm,/home/ivora/ardupilot/Tools/autotest/default_params/gazebo-iris.parm)
+SIM_VEHICLE: Run ArduCopter
+SIM_VEHICLE: "/home/ivora/ardupilot/Tools/autotest/run_in_terminal_window.sh" "ArduCopter" "/home/ivora/ardupilot/build/sitl/bin/arducopter" "-S" "-I0" "--home" "-35.363261,149.165230,584,353" "--model" "gazebo-iris" "--speedup" "1" "--defaults" "/home/ivora/ardupilot/Tools/autotest/default_params/copter.parm,/home/ivora/ardupilot/Tools/autotest/default_params/gazebo-iris.parm"
+SIM_VEHICLE: Run MavProxy
+SIM_VEHICLE: "mavproxy.py" "--master" "tcp:127.0.0.1:5760" "--sitl" "127.0.0.1:5501" "--out" "127.0.0.1:14550" "--out" "127.0.0.1:14551" "--map" "--console"
+RiTW: Starting ArduCopter : /home/ivora/ardupilot/build/sitl/bin/arducopter -S -I0 --home -35.363261,149.165230,584,353 --model gazebo-iris --speedup 1 --defaults /home/ivora/ardupilot/Tools/autotest/default_params/copter.parm,/home/ivora/ardupilot/Tools/autotest/default_params/gazebo-iris.parm
+Connect tcp:127.0.0.1:5760 source_system=255
+Loaded module console
+Loaded module map
+Log Directory: 
+Telemetry log: mav.tlog
+Waiting for heartbeat from tcp:127.0.0.1:5760
+ MAV> mav.param
+MAV> Unknown command 'mav.param'
+
+MAV> rosrun mavros mavsys mode -c 0 
+MAV> Unknown command 'rosrun mavros mavsys mode -c 0'
+
+MAV> mode
+MAV> ('Available modes: ', ['RTL', 'TRAINING', 'LAND', 'AUTOTUNE', 'STABILIZE', 'QLAND', 'AUTO', 'GUIDED', 'LOITER', 'MANUAL', 'QRTL', 'QLOITER', 'FBWA', 'QAUTOTUNE', 'FBWB', 'QSTABILIZE', 'CRUISE', 'INITIALISING', 'CIRCLE', 'QHOVER', 'ACRO'])
+AUTO
+MAV> AUTO
+MAV> MODE AUTO
+MAV> Unknown command 'MODE AUTO'
+
+MAV> TAKEOFF
+MAV> Unknown command 'TAKEOFF'
+
+MAV> CIRCLE
+MAV> arm throttle
+MAV> arm throttle 50
+MAV> param load /home/arunabha42/simulation/ardupilot/Tools/Frame_params/Erle-Copter.param
+MAV> Failed to open file '/home/arunabha42/simulation/ardupilot/Tools/Frame_params/Erle-Copter.param': [Errno 2] No such file or directory: '/home/arunabha42/simulation/ardupilot/Tools/Frame_params/Erle-Copter.param'
+
+MAV> param laod /home/mav.param
+MAV> Usage: param <fetch|save|set|show|load|preload|forceload|diff|download|help>
+
+MAV> arm_throttle 29
+MAV> Unknown command 'arm_throttle 29'
+arm throttle 29
+MAV> mode
+MAV> ('Available modes: ', ['RTL', 'TRAINING', 'LAND', 'AUTOTUNE', 'STABILIZE', 'QLAND', 'AUTO', 'GUIDED', 'LOITER', 'MANUAL', 'QRTL', 'QLOITER', 'FBWA', 'QAUTOTUNE', 'FBWB', 'QSTABILIZE', 'CRUISE', 'INITIALISING', 'CIRCLE', 'QHOVER', 'ACRO'])
+
+MAV> mode stabilize
+MAV> 
+MAV> arm throttle
+MAV> rosrun mavros mavsys mode -c 0 
+MAV> Unknown command 'rosrun mavros mavsys mode -c 0'
+ mavsys mode -c 0 
+MAV> Unknown command 'mavsys mode -c 0'
+
+MAV> mavsys
+MAV> Unknown command 'mavsys'
+
+MAV> param show arming_check
+MAV> param set armin_check 0
+MAV> Unable to find parameter 'armin_check'
+param set arming_check 0
+MAV> Unable to find parameter 'arming_check'
+
+MAV> 
+
+
+###################################################################################################################################
+####################################################################################################################################
+
+
+
+ivora@ivora-desktop:~$ roslaunch mavros apm.launch fcu_url:=udp://:14550@
+... logging to /home/ivora/.ros/log/7c437cb8-b1d2-11e9-9af9-d26830ba94fd/roslaunch-ivora-desktop-18671.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://ivora-desktop:42731/
+
+SUMMARY
+========
+
+CLEAR PARAMETERS
+ * /mavros/
+
+PARAMETERS
+ * /mavros/cmd/use_comp_id_system_control: False
+ * /mavros/conn/heartbeat_mav_type: ONBOARD_CONTROLLER
+ * /mavros/conn/heartbeat_rate: 1.0
+ * /mavros/conn/system_time_rate: 1.0
+ * /mavros/conn/timeout: 10.0
+ * /mavros/conn/timesync_rate: 10.0
+ * /mavros/distance_sensor/rangefinder_pub/field_of_view: 0.0
+ * /mavros/distance_sensor/rangefinder_pub/frame_id: lidar
+ * /mavros/distance_sensor/rangefinder_pub/id: 0
+ * /mavros/distance_sensor/rangefinder_pub/send_tf: False
+ * /mavros/distance_sensor/rangefinder_pub/sensor_position/x: 0.0
+ * /mavros/distance_sensor/rangefinder_pub/sensor_position/y: 0.0
+ * /mavros/distance_sensor/rangefinder_pub/sensor_position/z: -0.1
+ * /mavros/distance_sensor/rangefinder_sub/id: 1
+ * /mavros/distance_sensor/rangefinder_sub/orientation: PITCH_270
+ * /mavros/distance_sensor/rangefinder_sub/subscriber: True
+ * /mavros/fake_gps/eph: 2.0
+ * /mavros/fake_gps/epv: 2.0
+ * /mavros/fake_gps/fix_type: 3
+ * /mavros/fake_gps/geo_origin/alt: 408.0
+ * /mavros/fake_gps/geo_origin/lat: 47.3667
+ * /mavros/fake_gps/geo_origin/lon: 8.55
+ * /mavros/fake_gps/gps_rate: 5.0
+ * /mavros/fake_gps/mocap_transform: True
+ * /mavros/fake_gps/satellites_visible: 5
+ * /mavros/fake_gps/tf/child_frame_id: fix
+ * /mavros/fake_gps/tf/frame_id: map
+ * /mavros/fake_gps/tf/listen: False
+ * /mavros/fake_gps/tf/rate_limit: 10.0
+ * /mavros/fake_gps/tf/send: False
+ * /mavros/fake_gps/use_mocap: True
+ * /mavros/fake_gps/use_vision: False
+ * /mavros/fcu_protocol: v2.0
+ * /mavros/fcu_url: udp://:14550@
+ * /mavros/gcs_url: 
+ * /mavros/global_position/child_frame_id: base_link
+ * /mavros/global_position/frame_id: map
+ * /mavros/global_position/gps_uere: 1.0
+ * /mavros/global_position/rot_covariance: 99999.0
+ * /mavros/global_position/tf/child_frame_id: base_link
+ * /mavros/global_position/tf/frame_id: map
+ * /mavros/global_position/tf/global_frame_id: earth
+ * /mavros/global_position/tf/send: False
+ * /mavros/global_position/use_relative_alt: True
+ * /mavros/image/frame_id: px4flow
+ * /mavros/imu/angular_velocity_stdev: 0.0003490659 // 0...
+ * /mavros/imu/frame_id: base_link
+ * /mavros/imu/linear_acceleration_stdev: 0.0003
+ * /mavros/imu/magnetic_stdev: 0.0
+ * /mavros/imu/orientation_stdev: 1.0
+ * /mavros/landing_target/camera/fov_x: 2.0071286398
+ * /mavros/landing_target/camera/fov_y: 2.0071286398
+ * /mavros/landing_target/image/height: 480
+ * /mavros/landing_target/image/width: 640
+ * /mavros/landing_target/land_target_type: VISION_FIDUCIAL
+ * /mavros/landing_target/listen_lt: False
+ * /mavros/landing_target/mav_frame: LOCAL_NED
+ * /mavros/landing_target/target_size/x: 0.3
+ * /mavros/landing_target/target_size/y: 0.3
+ * /mavros/landing_target/tf/child_frame_id: camera_center
+ * /mavros/landing_target/tf/frame_id: landing_target
+ * /mavros/landing_target/tf/listen: False
+ * /mavros/landing_target/tf/rate_limit: 10.0
+ * /mavros/landing_target/tf/send: True
+ * /mavros/local_position/frame_id: map
+ * /mavros/local_position/tf/child_frame_id: base_link
+ * /mavros/local_position/tf/frame_id: map
+ * /mavros/local_position/tf/send: False
+ * /mavros/local_position/tf/send_fcu: False
+ * /mavros/mission/pull_after_gcs: True
+ * /mavros/mocap/use_pose: True
+ * /mavros/mocap/use_tf: False
+ * /mavros/odometry/estimator_type: 3
+ * /mavros/odometry/frame_tf/desired_frame: ned
+ * /mavros/plugin_blacklist: ['actuator_contro...
+ * /mavros/plugin_whitelist: []
+ * /mavros/px4flow/frame_id: px4flow
+ * /mavros/px4flow/ranger_fov: 0.118682
+ * /mavros/px4flow/ranger_max_range: 5.0
+ * /mavros/px4flow/ranger_min_range: 0.3
+ * /mavros/safety_area/p1/x: 1.0
+ * /mavros/safety_area/p1/y: 1.0
+ * /mavros/safety_area/p1/z: 1.0
+ * /mavros/safety_area/p2/x: -1.0
+ * /mavros/safety_area/p2/y: -1.0
+ * /mavros/safety_area/p2/z: -1.0
+ * /mavros/setpoint_accel/send_force: False
+ * /mavros/setpoint_attitude/reverse_thrust: False
+ * /mavros/setpoint_attitude/tf/child_frame_id: target_attitude
+ * /mavros/setpoint_attitude/tf/frame_id: map
+ * /mavros/setpoint_attitude/tf/listen: False
+ * /mavros/setpoint_attitude/tf/rate_limit: 50.0
+ * /mavros/setpoint_attitude/use_quaternion: False
+ * /mavros/setpoint_position/mav_frame: LOCAL_NED
+ * /mavros/setpoint_position/tf/child_frame_id: target_position
+ * /mavros/setpoint_position/tf/frame_id: map
+ * /mavros/setpoint_position/tf/listen: False
+ * /mavros/setpoint_position/tf/rate_limit: 50.0
+ * /mavros/setpoint_raw/thrust_scaling: 1.0
+ * /mavros/setpoint_velocity/mav_frame: LOCAL_NED
+ * /mavros/startup_px4_usb_quirk: False
+ * /mavros/sys/disable_diag: False
+ * /mavros/sys/min_voltage: 10.0
+ * /mavros/target_component_id: 1
+ * /mavros/target_system_id: 1
+ * /mavros/tdr_radio/low_rssi: 40
+ * /mavros/time/time_ref_source: fcu
+ * /mavros/time/timesync_avg_alpha: 0.6
+ * /mavros/time/timesync_mode: MAVLINK
+ * /mavros/vibration/frame_id: base_link
+ * /mavros/vision_pose/tf/child_frame_id: vision_estimate
+ * /mavros/vision_pose/tf/frame_id: map
+ * /mavros/vision_pose/tf/listen: False
+ * /mavros/vision_pose/tf/rate_limit: 10.0
+ * /mavros/vision_speed/listen_twist: True
+ * /mavros/vision_speed/twist_cov: True
+ * /mavros/wheel_odometry/child_frame_id: base_link
+ * /mavros/wheel_odometry/count: 2
+ * /mavros/wheel_odometry/frame_id: map
+ * /mavros/wheel_odometry/send_raw: True
+ * /mavros/wheel_odometry/send_twist: False
+ * /mavros/wheel_odometry/tf/child_frame_id: base_link
+ * /mavros/wheel_odometry/tf/frame_id: map
+ * /mavros/wheel_odometry/tf/send: True
+ * /mavros/wheel_odometry/use_rpm: False
+ * /mavros/wheel_odometry/vel_error: 0.1
+ * /mavros/wheel_odometry/wheel0/radius: 0.05
+ * /mavros/wheel_odometry/wheel0/x: 0.0
+ * /mavros/wheel_odometry/wheel0/y: -0.15
+ * /mavros/wheel_odometry/wheel1/radius: 0.05
+ * /mavros/wheel_odometry/wheel1/x: 0.0
+ * /mavros/wheel_odometry/wheel1/y: 0.15
+ * /rosdistro: melodic
+ * /rosversion: 1.14.3
+
+NODES
+  /
+    mavros (mavros/mavros_node)
+
+ROS_MASTER_URI=http://localhost:11311
+
+ERROR: cannot launch node of type [mavros/mavros_node]: can't locate node [mavros_node] in package [mavros]
+No processes to monitor
+shutting down processing monitor...
+... shutting down processing monitor complete
+ivora@ivora-desktop:~$ 
+
